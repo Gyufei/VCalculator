@@ -1,7 +1,7 @@
 <template>
-  <button @click="handleClick">
+  <span class="btn-text" @click="handleClick">
     <span>{{ btnText }}</span>
-  </button>
+  </span>
 </template>
 
 <script>
@@ -23,6 +23,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="css" scoped>
+.btn-text {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+  line-height: 37px;
+  color: #333;
+
+  cursor: pointer;
+}
 
 </style>

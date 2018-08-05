@@ -16,3 +16,14 @@ export default {
   }
 }
 </script>
+
+<style lang="css" scoped>
+  .main{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    height: 40px;
+  }
+</style>
