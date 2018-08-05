@@ -1,6 +1,6 @@
 # v-calculator
 
-> a calculator demo uses vue with unit test
+> 使用`Vue`实现的一个网页计算器，进行了较高程度覆盖的单元测试。
 
 ## Build Setup
 
@@ -23,5 +23,3 @@ npm run unit
 # run all tests
 npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

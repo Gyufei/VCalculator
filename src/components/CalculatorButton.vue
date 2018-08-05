@@ -1,6 +1,6 @@
 <template>
   <button @click="handleClick">
-    <span>{{ text }}</span>
+    <span>{{ btnText }}</span>
   </button>
 </template>
 
@@ -9,15 +9,15 @@ export default {
   name: 'CalculatorButton',
 
   props: {
-    text: {
-      type: String,
+    btnText: {
+      type: [String, Number],
       required: true
     }
   },
 
   methods: {
     handleClick () {
-      this.$emit('click', this.text)
+      this.$emit('click', this.btnText)
     }
   }
 }

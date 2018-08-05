@@ -18,11 +18,11 @@ exports.destoryVm = function (vm) {
 
 // 创建一个Vue实例
 exports.createVm = function (Comp, mounted = false) {
-  if (Object.prototype.toString.call(Comp) === '[Object String]') {
+  if (Object.prototype.toString.call(Comp) === '[object String]') {
     Comp = { template: Comp }
   }
 
-  return new Vue(Comp).$mount(mounted !== false ? createElm() : null)
+  return new Vue(Comp).$mount(mounted === false ? null : createElm())
 }
 
 // 创建一个测试组件实例
@@ -34,5 +34,5 @@ exports.createTest = function (Comp, propsData = {}, mounted = false) {
 
   const elm = createElm()
   const Constructor = Vue.extend(Comp)
-  return new Constructor({ propsData }).$mount(mounted !== false ? elm : null)
+  return new Constructor({ propsData }).$mount(mounted === false ? null : elm)
 }
