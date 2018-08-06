@@ -44,4 +44,11 @@ describe('CalculatorButton', () => {
 
     expect(vm.$el).to.property('textContent').to.include(btnPropText)
   })
+
+  it('show-btn-color', () => {
+    let btnPropText = '+'
+    vm = createTest(CalculatorButton, {btnText: btnPropText}, true)
+
+    expect(vm.$el.querySelector('.btn-text span').classList.contains('colored')).to.be.true /* eslint-disable-line no-unused-expressions */
+  })
 })

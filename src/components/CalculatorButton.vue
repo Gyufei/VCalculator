@@ -1,6 +1,7 @@
 <template>
   <span class="btn-text" @click="handleClick">
-    <span>{{ btnText }}</span>
+    <span
+    :class="{colored: isColored}">{{ btnText }}</span>
   </span>
 </template>
 
@@ -12,6 +13,13 @@ export default {
     btnText: {
       type: [String, Number],
       required: true
+    }
+  },
+
+  computed: {
+    isColored () {
+      const NoColorArr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'C']
+      return NoColorArr.indexOf(this.btnText) === -1
     }
   },
 
@@ -36,6 +44,14 @@ export default {
   color: #333;
 
   cursor: pointer;
+}
+
+.btn-text:active {
+  background-color: #f2f2f2;
+}
+
+.colored {
+  color: #f60;
 }
 
 </style>
