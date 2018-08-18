@@ -4,7 +4,7 @@
 
     <main>
       <div class="screen">
-        <calculator-screen :screenText="screenText"></calculator-screen>
+        <calculator-screen :screenBottomText="screenBottomText" :screenTopText="screenTopText"></calculator-screen>
       </div>
 
       <div class="button-group">
@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import calculator from '@/utils/calculator.js'
+
 import CalculatorButton from './CalculatorButton'
 import CalculatorScreen from './CalculatorScreen'
 
@@ -40,13 +42,17 @@ export default {
         ['1', '2', '3', '-'],
         ['0', '.', '=', '+']
       ],
-      screenText: '3+3-6'
+      screenTopText: '',
+      screenBottomText: ''
     }
   },
 
   methods: {
     handleClick (val) {
-      console.log(val)
+      const calcRes = calculator(this.screenBottomText + val, this.screenTopText)
+
+      this.screenBottomText = calcRes.equation
+      this.screenTopText = calcRes.oldEquation
     }
   }
 }

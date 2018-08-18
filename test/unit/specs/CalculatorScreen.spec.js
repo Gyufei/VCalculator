@@ -8,9 +8,13 @@ describe('CalculatorScreen', () => {
   })
 
   it('show-screen-text', () => {
-    let propScreenText = '2+3=55'
-    vm = createTest(CalculatorScreen, {screenText: propScreenText}, true)
+    const props = {
+      screenBottomText: '2+3=',
+      screenTopText: '5'
+    }
+    vm = createTest(CalculatorScreen, props, true)
 
-    expect(vm.$el).to.property('textContent').to.be.include(propScreenText)
+    expect(vm.$el).to.property('textContent').to.be.include(props.screenTopText)
+    expect(vm.$el).to.property('textContent').to.be.include(props.screenBottomText)
   })
 })
